@@ -143,7 +143,7 @@ Conservation des séries ajoutées dans un tableau JavaScript jusqu'au rechargem
 
 ## Project Structure
 
-
+```
 SerieScope/
 ├── dist/
 │   └── output.css        # CSS li t-generate (Tailwind build)
@@ -159,3 +159,4 @@ SerieScope/
 ├── package.json
 ├── README.md
 └── Vector (1).png        # Image
+```
