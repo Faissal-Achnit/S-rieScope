@@ -140,3 +140,19 @@ Ouvrir le fichier index.html avec Live Server.
 Message de confirmation.
 
 Conservation des séries ajoutées dans un tableau JavaScript jusqu'au rechargement de la page.
+
+SerieScope/
+├── dist/
+│   └── output.css        # CSS li t-generate (Tailwind build)
+├── js/
+│   └── script.js         # Logic dyal JavaScript
+├── node_modules/         # Dependencies (ma-kay-tconsultach f Git)
+├── src/
+│   └── input.css         # CSS source (Tailwind directives)
+├── hh.jpg                # Image
+├── index.html            # Main page
+├── main.svg              # Logo / icon
+├── package-lock.json
+├── package.json
+├── README.md
+└── Vector (1).png        # Image
