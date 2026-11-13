@@ -1,0 +1,264 @@
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sériescope</title>
+    <link rel="stylesheet" href="./dist/output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="js/script.js" defer></script>
+  </head>
+
+  <body class="font-inter">
+
+    <header class="bg-[#080808] p-4 sm:p-6">
+      <nav class="flex items-center gap-4">
+        <span
+          class="bg-[#FAFAFA] justify-items-center items-center rounded-[19px]"
+        >
+          <img src="Vector (1).png" width="25" />
+        </span>
+        <span class="text-white text-[19px] font-bold"> Sériescope </span>
+      </nav>
+    </header>
+
+    <main class="bg-[#101010] p-4 sm:p-6">
+
+      <section>
+        <h1 class="text-[#FAFAFA] text-[24px] font-bold">
+          Explore les séries TV
+        </h1>
+        <p class="text-[9px] text-[#BABABA] font-normal">
+          Retrouve tes séries préférées et enrichis le catalogue.
+        </p>
+      </section>
+
+      <!-- Formulaire -->
+      <section
+        class="p-2 sm:p-4 m-2 rounded-[14px] border border-[#393939] bg-[#191919]"
+      >
+        <form id="frmaulaireAjouter"  class="flex flex-col gap-4 p-2">
+
+          <h3 class="text-[21px] font-bold text-[#FAFAFA]">
+            Ajouter une série
+          </h3>
+
+          <p class="text-[9px] font-bold text-[#BABABA]">
+            Les champs marqués d’un * sont obligatoires.
+          </p>
+
+          <!-- MODIFICATION 1 : GRID RESPONSIVE DU FORMULAIRE -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+            <div class="flex flex-col gap-2">
+              <label
+                class="text-[14px] font-semibold text-[#FAFAFA]"
+                for="nom-serie"
+              >
+                Nom de la série *
+              </label>
+
+              <input
+                class="w-full border-amber-50 border p-2 rounded-lg text-[14px] text-[#BABABA]"
+                type="text"
+                id="nom-serie"
+                name="nom"
+                placeholder="Ex. The Bear"
+                required
+              />
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <label
+                class="text-[14px] font-semibold text-[#FAFAFA]"
+                for="Genre"
+              >
+                Genre(s) *
+                <span class="text-[#BABABA] text-[9px] items-center font-normal">
+                  séparés par des virgules
+                </span>
+              </label>
+
+              <input
+                class="w-full border-amber-50 border p-2 rounded-lg text-[14px] text-[#BABABA]"
+                type="text"
+                id="Genre"
+                placeholder="Ex. Drame, Comédie"
+                required
+              />
+            </div>
+
+            <!-- MODIFICATION 2 : DESCRIPTION PREND TOUTE LA LARGEUR -->
+            <div class="flex flex-col gap-2 md:col-span-2">
+              <label
+                class="text-[16px] font-semibold text-[#FAFAFA]"
+                for="description"
+              >
+                Description
+                <span class="text-[9px] items-center text-[#BABABA]">
+                  facultative
+                </span>
+              </label>
+
+              <textarea
+                name="description"
+                id="description"
+                placeholder="Résume la série en quelques mots…"
+                class="w-full border-amber-50 border p-2 rounded-lg text-[14px] text-[#BABABA]"
+              ></textarea>
+            </div>
+
+          </div>
+
+          <button
+            class="bg-[#EEEEEE] rounded-lg flex flex-col text-[#101010] font-bold p-3 w-fit"
+            type="submit"
+          >
+            ＋ Ajouter la série
+          </button>
+
+        </form>
+      </section>
+
+      <!-- Catalogue -->
+      <section class="m-1">
+
+        <div>
+          <h2 class="text-[21px] text-[#FAFAFA] font-bold">
+            Catalogue des séries
+          </h2>
+
+          <p class="text-[11px] text-[#BABABA] font-normal">
+            Recherche par nom ou explore un genre.
+          </p>
+        </div>
+
+        <!-- MODIFICATION 3 : RECHERCHE RESPONSIVE -->
+        <section
+          class="p-3 mt-6 rounded-[14px] border border-[#393939] bg-[#191919]"
+        >
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_1fr_auto] gap-3">
+
+            <div class="flex flex-col gap-2">
+              <label
+                class="text-[#FAFAFA] text-[14px] font-semibold"
+                for="rechreche"
+              >
+                Recherche
+              </label>
+
+              <input
+                class="w-full border-amber-50 border p-2 rounded-lg text-[14px] text-[#BABABA]"
+                type="text"
+                id="rechreche"
+                name="rechreche"
+                placeholder="Ex. Breaking Bad"
+              />
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <label
+                class="text-[#FAFAFA] text-[14px] font-semibold"
+                for="select"
+              >
+                Genre
+              </label>
+
+              <select
+                class="w-full border border-[#393939] p-2 rounded-lg text-[14px] text-[#BABABA] bg-[#191919]"
+                name="Genre"
+                id="select"
+              >
+                <option value="Tous les genres">Tous les genres</option>
+              </select>
+            </div>
+
+            <div class="flex items-end">
+              <button class="w-full p-2 rounded-lg text-[#FAFAFA] text-[12px]">
+                ↻ Réinitialiser
+              </button>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- MODIFICATION 4 : GRID RESPONSIVE DES CARDS -->
+        <section
+          id="cardes"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6"
+        >
+
+          <!-- <article class="rounded-[14px] border border-[#393939] bg-[#191919]">
+            <div class="flex flex-col">
+              <img
+                class="rounded-[9px] w-full"
+                src="hh.jpg"
+                alt="Breaking Bad"
+              />
+            </div>
+
+            <div class="p-2">
+              <p class="text-[#FAFAFA] text-[15px] font-bold titre">
+                Breaking Bad
+              </p>
+
+              <div class="flex gap-4">
+                <span class="border-[#292929] p-1 bg-[#292929] border rounded-[9px] text-[#EEEEEE] text-[11px]">
+                  Drame
+                </span>
+
+                <span class="border-[#292929] p-1 bg-[#292929] border rounded-[9px] text-[#EEEEEE] text-[11px]">
+                  Policier
+                </span>
+              </div>
+
+              <p class="text-[9px] font-normal text-[#BABABA]">
+                Un professeur de chimie mène une double vie.
+              </p>
+            </div>
+          </article>
+
+          <article class="rounded-[14px] border border-[#393939] bg-[#191919]">
+            <div class="flex flex-col">
+              <img
+                class="rounded-[9px] w-full"
+                src="hh.jpg"
+                alt="Breaking Bad"
+              />
+            </div>
+
+            <div class="p-2">
+              <p class="text-[#FAFAFA] text-[15px] font-bold">
+                Breaking Bad
+              </p>
+
+              <div class="flex gap-4">
+                <span class="border-[#292929] p-1 bg-[#292929] border rounded-[9px] text-[#EEEEEE] text-[11px]">
+                  Drame
+                </span>
+
+                <span class="border-[#292929] p-1 bg-[#292929] border rounded-[9px] text-[#EEEEEE] text-[11px]">
+                  Policier
+                </span>
+              </div>
+
+              <p class="text-[9px] font-normal text-[#BABABA]">
+                Un professeur de chimie mène une double vie.
+              </p>
+            </div>
+          </article> -->
+
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
