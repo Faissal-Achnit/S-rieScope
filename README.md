@@ -141,6 +141,9 @@ Message de confirmation.
 
 Conservation des séries ajoutées dans un tableau JavaScript jusqu'au rechargement de la page.
 
+## Project Structure
+
+
 SerieScope/
 ├── dist/
 │   └── output.css        # CSS li t-generate (Tailwind build)
